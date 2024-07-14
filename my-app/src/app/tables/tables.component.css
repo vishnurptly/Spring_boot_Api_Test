@@ -1,0 +1,41 @@
+h2{
+    text-align: center;
+    font: size 2px;
+    text-shadow: none;
+    font-style: italic;
+    color: #fff;
+}
+
+
+.forms{
+    border: 5px;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 400px;
+    height: 550px;
+    margin-left: -100px;
+    margin-top: 13px;
+    flex-direction: row;
+}
+input{
+    border-radius: 15px;
+    flex-direction: row;
+}
+.head{
+    text-align: center;
+    padding-top: 10px;
+    flex-direction: row;
+}
+.btn-d{
+    text-align: center;
+    padding-top: 10px;
+}
+.btn{
+    margin-top: 10px;
+    width: 200px;
+    border-radius: 15px;
+    flex-direction: row;
+}
+h1{
+    padding-top: 58px;
+}

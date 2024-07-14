@@ -1,0 +1,112 @@
+
+<div class="container">
+    <div class=" fbody row  ">
+       
+        
+           
+               <div class="forms  col-sm">
+                <div class="head">
+                    <h1> List</h1>
+                </div>
+            <form  [formGroup]="userForm" >
+
+                <div class="form-group">
+                    <label class="form-label">ID</label>
+                    <input  type="text" class="form-control"formControlName="id"  >
+                    <div class="text-danger" *ngIf="userForm.controls['id'].invalid && (userForm.controls['id']).touched || userForm.controls['id'].dirty">
+                        <span *ngIf="userForm.controls['location'].errors?.['required']">id is required</span>
+                        
+                     
+                    </div>
+                </div>
+               
+                
+                <div class="form-group">
+                    
+                    <label class="form-label">Name</label>
+                    <input  type="text" class="form-control"formControlName="name"  >
+                     
+                    <div class="text-danger" *ngIf="userForm.controls['name'].invalid && (userForm.controls['name']).touched || userForm.controls['name'].dirty">
+                        <span *ngIf="userForm.controls['name'].errors?.['required']"> Name is required</span>
+                        <span *ngIf="userForm.controls['name'].errors?.['pattern']">Name Follow characters A/a</span>
+                     
+                        
+                    </div>
+                    
+                </div>
+               
+                
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input  formControlName="location" type="text" class="form-control"  >
+                    
+                    <div class="text-danger" *ngIf="userForm.controls['location'].invalid && (userForm.controls['location']).touched || userForm.controls['location'].dirty">
+                        <span *ngIf="userForm.controls['location'].errors?.['required']">location is required</span>
+                        <span *ngIf="userForm.controls['location'].errors?.['pattern']">location characters Follow the A/a</span>
+                     
+                    </div>
+
+            </div>
+             
+                <div class="btn-d  form-select-sm">
+                    <button class="  btn btn-primary" (click)="checkvalue()" type="submit">Check</button>
+                    
+                    <button class="  btn btn-primary" (click)="checkgetbyid()" type="submit">getById</button>
+                </div>
+            </form>
+        </div>
+
+  
+        
+        
+           
+        
+
+
+
+            <div class="col-6  table-striped w-75 h-75 shadow">
+                <h2>Details Table</h2> 
+               
+            <table class="table " >
+              
+                <thead>
+                  <tr >
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Addrass</th>
+                    <th scope="col">Location</th>
+                    
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody  *ngFor="let item of detailsTable">
+                  <tr>
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{item.location}}</td>
+                    
+                    <td><Button class="btn btn-success" (click)="update()" >Edit</Button></td>
+                    <td><Button class="btn btn-danger" (click)="deleteitem(item.name,item.id)">Delete</Button></td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            </div>
+      
+      
+
+
+     
+        </div>
+    </div>  
+    
+
+          
+
+   
+    
+    
